@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { ArrowRight, CheckCircle, Shield } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import scrollToSection from "@/utils";
 import VehicleAnimation from "./VehicleAnimation";
 import FlyerModal from "./FlyerModal";
@@ -130,9 +131,11 @@ export default function HeroSection() {
                     <div
                       className={`aspect-[4/3] bg-gradient-to-br ${flyer.bgGradient} rounded-lg mb-3 flex items-center justify-center`}
                     >
-                      <img
+                      <Image
                         src={flyer.src}
                         alt={flyer.alt}
+                        width={300}
+                        height={225}
                         className="w-full h-full object-cover rounded-lg"
                         onError={(e) => {
                           e.target.style.display = "none";

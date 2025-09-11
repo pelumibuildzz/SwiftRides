@@ -93,7 +93,7 @@ export default function ContactSection() {
             Contact Swift Rides
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto lg:text-xl">
-            Need help or have questions? We're here to assist you 24/7. Reach
+            Need help or have questions? We&apos;re here to assist you 24/7. Reach
             out through any of these channels.
           </p>
         </div>

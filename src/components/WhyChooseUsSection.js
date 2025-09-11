@@ -17,7 +17,7 @@ export default function WhyChooseUsSection() {
       icon: DollarSign,
       title: "Affordable Rides",
       description:
-        "Student-friendly pricing that won't break your budget. Quality transportation at rates you can afford.",
+        "Student-friendly pricing that won&apos;t break your budget. Quality transportation at rates you can afford.",
       color: "text-green-600",
       bgColor: "bg-green-50",
       borderColor: "border-green-200",
@@ -92,8 +92,8 @@ export default function WhyChooseUsSection() {
             Why Ride with <span className="text-primary">Swift Rides?</span>
           </h2>
           <p className="mx-auto max-w-3xl text-lg text-gray-600 lg:text-xl">
-            We're not just another ride service. We're your trusted partner in
-            getting back to campus safely, comfortably, and affordably. Here's
+            We&apos;re not just another ride service. We&apos;re your trusted partner in
+            getting back to campus safely, comfortably, and affordably. Here&apos;s
             what makes us the top choice for Covenant University students.
           </p>
         </div>

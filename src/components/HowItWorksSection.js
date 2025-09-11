@@ -15,9 +15,9 @@ export default function HowItWorksSection() {
     },
     {
       number: "02",
-      title: "Payment & Confirmation",
+      title: "Payment &amp; Confirmation",
       description:
-        "Our team will reach out to you for secure payment processing. Once confirmed, you'll receive all trip details and driver information.",
+        "Our team will reach out to you for secure payment processing. Once confirmed, you&apos;ll receive all trip details and driver information.",
       icon: <CreditCard className="h-8 w-8" />,
       color: "from-accent to-accent/80",
     },
@@ -51,7 +51,7 @@ export default function HowItWorksSection() {
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto lg:text-xl">
             Getting back to Covenant University has never been easier. Follow
-            these simple steps and we'll handle the rest.
+            these simple steps and we&apos;ll handle the rest.
           </p>
         </div>
 

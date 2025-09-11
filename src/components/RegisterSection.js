@@ -130,7 +130,7 @@ export default function RegisterSection() {
             Register for Swift Rides
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto lg:text-xl">
-            Fill out the form below and we'll arrange your comfortable ride from
+            Fill out the form below and we&apos;ll arrange your comfortable ride from
             Lagos Airport to Covenant University.
           </p>
         </div>
@@ -439,7 +439,7 @@ export default function RegisterSection() {
             <Clock className="h-8 w-8 text-primary mx-auto mb-3" />
             <h4 className="font-semibold text-gray-900 mb-2">Quick Response</h4>
             <p className="text-sm text-gray-600">
-              We'll contact you within 2 hours
+              We&apos;ll contact you within 2 hours
             </p>
           </div>
           <div className="text-center bg-accent/5 rounded-xl p-6 border border-accent/10">
@@ -455,7 +455,7 @@ export default function RegisterSection() {
               Guaranteed Service
             </h4>
             <p className="text-sm text-gray-600">
-              100% refund if we don't deliver
+              100% refund if we don&apos;t deliver
             </p>
           </div>
         </div>

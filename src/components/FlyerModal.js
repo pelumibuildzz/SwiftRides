@@ -1,6 +1,7 @@
 "use client";
 
 import { X } from "lucide-react";
+import Image from "next/image";
 
 export default function FlyerModal({ flyer, onClose, onBookNow }) {
   if (!flyer) return null;
@@ -39,9 +40,11 @@ export default function FlyerModal({ flyer, onClose, onBookNow }) {
 
         {/* Large flyer image */}
         <div className="flex items-center justify-center">
-          <img
+          <Image
             src={flyer.src}
             alt={flyer.alt}
+            width={800}
+            height={600}
             className="max-w-full max-h-[70vh] object-contain rounded-xl shadow-lg"
             onError={(e) => {
               e.target.style.display = "none";
