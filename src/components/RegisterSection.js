@@ -298,7 +298,7 @@ export default function RegisterSection() {
                   className="flex items-center gap-2 text-sm font-semibold text-gray-700"
                 >
                   <Phone className="h-4 w-4 text-primary" />
-                  Phone Number
+                  Telegram Number
                 </label>
                 <input
                   type="tel"
