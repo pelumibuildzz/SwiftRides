@@ -130,8 +130,8 @@ export default function RegisterSection() {
             Register for Swift Rides
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto lg:text-xl">
-            Fill out the form below and we&apos;ll arrange your comfortable ride from
-            Lagos Airport to Covenant University.
+            Fill out the form below and we&apos;ll arrange your comfortable ride
+            from Lagos Airport to Covenant University.
           </p>
         </div>
 

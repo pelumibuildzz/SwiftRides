@@ -92,9 +92,10 @@ export default function WhyChooseUsSection() {
             Why Ride with <span className="text-primary">Swift Rides?</span>
           </h2>
           <p className="mx-auto max-w-3xl text-lg text-gray-600 lg:text-xl">
-            We&apos;re not just another ride service. We&apos;re your trusted partner in
-            getting back to campus safely, comfortably, and affordably. Here&apos;s
-            what makes us the top choice for Covenant University students.
+            We&apos;re not just another ride service. We&apos;re your trusted
+            partner in getting back to campus safely, comfortably, and
+            affordably. Here&apos;s what makes us the top choice for Covenant
+            University students.
           </p>
         </div>
 
