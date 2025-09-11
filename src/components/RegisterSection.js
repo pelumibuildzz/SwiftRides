@@ -6,13 +6,14 @@ import {
   Calendar,
   Clock,
   Phone,
-  Luggage,
+  Package,
   Send,
   CheckCircle,
   Shield,
   GraduationCap,
   Home,
   Hash,
+  Mail,
 } from "lucide-react";
 
 export default function RegisterSection() {
@@ -24,7 +25,8 @@ export default function RegisterSection() {
     arrivalDate: "",
     time: "",
     phoneNumber: "",
-    luggageBags: "1",
+    email: "",
+    numberOfBoxes: "1",
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -70,7 +72,8 @@ export default function RegisterSection() {
             arrivalDate: "",
             time: "",
             phoneNumber: "",
-            luggageBags: "1",
+            email: "",
+            numberOfBoxes: "1",
           });
         }, 3000);
       } else {
@@ -309,33 +312,60 @@ export default function RegisterSection() {
                 />
               </div>
 
-              {/* Luggage Bags */}
+              {/* Email Field */}
               <div className="space-y-2">
                 <label
-                  htmlFor="luggageBags"
+                  htmlFor="email"
                   className="flex items-center gap-2 text-sm font-semibold text-gray-700"
                 >
-                  <Luggage className="h-4 w-4 text-primary" />
-                  Number of Luggage Bags
+                  <Mail className="h-4 w-4 text-primary" />
+                  Email Address
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required
+                  placeholder="student@example.com"
+                  className="w-full rounded-lg border border-gray-200 bg-gray-50 px-4 py-3 text-gray-900 placeholder-gray-500 transition-colors focus:border-primary focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary/20"
+                />
+              </div>
+            </div>
+
+            {/* Row 4: Number of Boxes */}
+            <div className="grid gap-6 md:grid-cols-2">
+              {/* Number of Boxes */}
+              <div className="space-y-2">
+                <label
+                  htmlFor="numberOfBoxes"
+                  className="flex items-center gap-2 text-sm font-semibold text-gray-700"
+                >
+                  <Package className="h-4 w-4 text-primary" />
+                  Number of Boxes
                 </label>
                 <select
-                  id="luggageBags"
-                  name="luggageBags"
-                  value={formData.luggageBags}
+                  id="numberOfBoxes"
+                  name="numberOfBoxes"
+                  value={formData.numberOfBoxes}
                   onChange={handleInputChange}
                   required
                   className="w-full rounded-lg border border-gray-200 bg-gray-50 px-4 py-3 text-gray-900 transition-colors focus:border-primary focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary/20"
                 >
-                  <option value="1">1 bag</option>
-                  <option value="2">2 bags</option>
-                  <option value="3">3 bags</option>
-                  <option value="4">4 bags</option>
-                  <option value="5">5+ bags</option>
+                  <option value="1">1 box</option>
+                  <option value="2">2 boxes</option>
+                  <option value="3">3 boxes</option>
+                  <option value="4">4 boxes</option>
+                  <option value="5">5+ boxes</option>
                 </select>
               </div>
+
+              {/* Empty space to maintain grid layout */}
+              <div></div>
             </div>
 
-            {/* Row 4: Arrival Date and Time */}
+            {/* Row 5: Arrival Date and Time */}
             <div className="grid gap-6 md:grid-cols-2">
               {/* Arrival Date Field */}
               <div className="space-y-2">

@@ -41,7 +41,8 @@ export async function POST(request) {
       "arrivalDate",
       "time",
       "phoneNumber",
-      "luggageBags",
+      "email",
+      "numberOfBoxes",
     ];
     const missingFields = requiredFields.filter((field) => !formData[field]);
 
@@ -81,53 +82,74 @@ export async function POST(request) {
       formattedArrivalDate,
       formData.time,
       formData.phoneNumber,
-      formData.luggageBags,
+      formData.email,
+      formData.numberOfBoxes,
       "Pending", // Status
       "", // Notes
     ];
 
     // Check if headers exist, if not create them
     try {
-      const headerRange = `${sheetName}!A1:K1`;
+      const headerRange = `${sheetName}!A1:L1`;
       const headerResponse = await sheets.spreadsheets.values.get({
         spreadsheetId,
         range: headerRange,
       });
+
+      const expectedHeaders = [
+        "Timestamp",
+        "Full Name",
+        "Matric Number",
+        "Level",
+        "Hall of Residence",
+        "Arrival Date",
+        "Arrival Time",
+        "Phone Number",
+        "Email Address",
+        "Number of Boxes",
+        "Status",
+        "Notes",
+      ];
 
       // If no headers exist, add them
       if (
         !headerResponse.data.values ||
         headerResponse.data.values.length === 0
       ) {
-        const headers = [
-          "Timestamp",
-          "Full Name",
-          "Matric Number",
-          "Level",
-          "Hall of Residence",
-          "Arrival Date",
-          "Arrival Time",
-          "Phone Number",
-          "Luggage Bags",
-          "Status",
-          "Notes",
-        ];
-
         await sheets.spreadsheets.values.update({
           spreadsheetId,
           range: headerRange,
           valueInputOption: "RAW",
           requestBody: {
-            values: [headers],
+            values: [expectedHeaders],
           },
         });
+      } else {
+        // Check if headers need updating (for existing sheets)
+        const existingHeaders = headerResponse.data.values[0];
+        const needsUpdate =
+          expectedHeaders.length !== existingHeaders.length ||
+          expectedHeaders.some(
+            (header, index) => header !== existingHeaders[index]
+          );
+
+        if (needsUpdate) {
+          await sheets.spreadsheets.values.update({
+            spreadsheetId,
+            range: headerRange,
+            valueInputOption: "RAW",
+            requestBody: {
+              values: [expectedHeaders],
+            },
+          });
+        }
       }
     } catch (headerError) {
       console.log("Headers may not exist, will be created with first entry");
     }
 
     // Append the new row to the sheet
-    const appendRange = `${sheetName}!A:K`;
+    const appendRange = `${sheetName}!A:L`;
     const response = await sheets.spreadsheets.values.append({
       spreadsheetId,
       range: appendRange,

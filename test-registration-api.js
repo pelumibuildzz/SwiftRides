@@ -9,7 +9,8 @@ const testRegistration = {
   arrivalDate: "2025-09-28", // This should format as "Sunday 28/09/2025"
   time: "14:30",
   phoneNumber: "09012345678",
-  luggageBags: "2",
+  email: "john.doe@example.com",
+  numberOfBoxes: "2",
 };
 
 async function testAPI() {
