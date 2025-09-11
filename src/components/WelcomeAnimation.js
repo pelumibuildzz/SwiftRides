@@ -7,7 +7,7 @@ export default function WelcomeAnimation({ onComplete }) {
   const [showAnimation, setShowAnimation] = useState(true);
   const [animationStep, setAnimationStep] = useState("start");
 
-  const punchline = "Getting Students Home, Swift &amp; Safe.";
+  const punchline = "Getting Students Home, Swift & Safe.";
   const punchlineWords = punchline.split(" ");
 
   useEffect(() => {
