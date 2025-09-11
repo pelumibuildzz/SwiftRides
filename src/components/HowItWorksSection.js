@@ -15,9 +15,9 @@ export default function HowItWorksSection() {
     },
     {
       number: "02",
-      title: "Payment &amp; Confirmation",
+      title: "Payment & Confirmation",
       description:
-        "Our team will reach out to you for secure payment processing. Once confirmed, you&apos;ll receive all trip details and driver information.",
+        "Our team will reach out to you for secure payment processing. Once confirmed, you'll receive all trip details and driver information.",
       icon: <CreditCard className="h-8 w-8" />,
       color: "from-accent to-accent/80",
     },

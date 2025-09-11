@@ -1,4 +1,5 @@
 import { Sora } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const sora = Sora({
@@ -19,6 +20,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${sora.variable} antialiased`}>{children}</body>
+      <Analytics />
     </html>
   );
 }
