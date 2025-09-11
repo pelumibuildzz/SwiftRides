@@ -1,14 +1,50 @@
 "use client";
+import { useState } from "react";
 import { ArrowRight, CheckCircle, Shield } from "lucide-react";
 import Link from "next/link";
 import scrollToSection from "@/utils";
 import VehicleAnimation from "./VehicleAnimation";
+import FlyerModal from "./FlyerModal";
 
 export default function HeroSection() {
+  const [selectedFlyer, setSelectedFlyer] = useState(null);
+
+  const flyers = [
+    {
+      id: 1,
+      src: "/swiftflyer.jpg",
+      alt: "Swift Rides Pricing",
+      title: "Student Pricing",
+      fallback: { text: "₦5000", subtext: "PRICE" },
+      borderColor: "border-success/20 hover:border-success/40",
+      bgGradient: "from-success/10 to-primary/10",
+      textColor: "text-success",
+    },
+    {
+      id: 2,
+      src: "/swiftflyer1.jpg",
+      alt: "Swift Rides Services",
+      title: "Our Services",
+      fallback: { text: "Services", subtext: "INFO" },
+      borderColor: "border-primary/20 hover:border-primary/40",
+      bgGradient: "from-primary/10 to-accent/10",
+      textColor: "text-primary",
+    },
+    {
+      id: 3,
+      src: "/swiftflyer2.jpg",
+      alt: "Swift Rides Information",
+      title: "About Swift Rides",
+      fallback: { text: "Swift", subtext: "INFO" },
+      borderColor: "border-accent/20 hover:border-accent/40",
+      bgGradient: "from-accent/10 to-primary/10",
+      textColor: "text-accent",
+    },
+  ];
   return (
     <section
       id="home"
-      className="relative overflow-hidden bg-gradient-to-br from-background via-background to-accent/5 px-6 py-20 lg:py-32 min-h-screen flex items-center"
+      className="relative overflow-hidden bg-gradient-to-br from-background via-background to-accent/5 px-6 py-20 lg:py-32 min-h-screen flex items-start"
     >
       <div className="mx-auto max-w-7xl w-full">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
@@ -76,10 +112,65 @@ export default function HeroSection() {
                 </span>
               </div>
             </div>
+            {/* Current Offers/Discounts */}
+            <div className="mt-8">
+              <div className="mb-4">
+                <span className="inline-flex items-center rounded-full bg-gradient-to-r from-primary to-accent px-3 py-1 text-sm font-medium text-white">
+                  💰 Pricing & Information
+                </span>
+              </div>
+
+              <div className="grid gap-3 sm:grid-cols-3">
+                {flyers.map((flyer) => (
+                  <div
+                    key={flyer.id}
+                    onClick={() => setSelectedFlyer(flyer)}
+                    className={`group relative overflow-hidden rounded-xl bg-white border-2 ${flyer.borderColor} p-4 shadow-md transition-all duration-300 hover:shadow-xl hover:scale-105 cursor-pointer`}
+                  >
+                    <div
+                      className={`aspect-[4/3] bg-gradient-to-br ${flyer.bgGradient} rounded-lg mb-3 flex items-center justify-center`}
+                    >
+                      <img
+                        src={flyer.src}
+                        alt={flyer.alt}
+                        className="w-full h-full object-cover rounded-lg"
+                        onError={(e) => {
+                          e.target.style.display = "none";
+                          e.target.nextSibling.style.display = "flex";
+                        }}
+                      />
+                      <div
+                        className={`hidden flex-col items-center justify-center ${flyer.textColor}`}
+                      >
+                        <span className="text-2xl font-bold">
+                          {flyer.fallback.text}
+                        </span>
+                        <span className="text-xs">
+                          {flyer.fallback.subtext}
+                        </span>
+                      </div>
+                    </div>
+                    <p className="text-xs text-gray-600 text-center font-medium">
+                      {flyer.title}
+                    </p>
+                    {/* Click indicator */}
+                    <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="bg-white/90 rounded-full p-1">
+                        <span className="text-xs text-gray-600">👁️</span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <p className="mt-3 text-xs text-gray-500 text-center">
+                *Click on any flyer to learn more about Swift Rides services.
+              </p>
+            </div>
           </div>
 
           {/* Hero Animated Illustration */}
-          <div className="relative">
+          <div className="relative self-start">
             <VehicleAnimation />
 
             {/* Stats cards */}
@@ -102,6 +193,13 @@ export default function HeroSection() {
       {/* Background decoration */}
       <div className="absolute top-0 right-0 -mt-20 h-40 w-40 rounded-full bg-gradient-to-br from-accent/10 to-primary/10 blur-3xl"></div>
       <div className="absolute bottom-0 left-0 -mb-20 h-32 w-32 rounded-full bg-gradient-to-tr from-primary/10 to-accent/10 blur-3xl"></div>
+
+      {/* Flyer Modal */}
+      <FlyerModal
+        flyer={selectedFlyer}
+        onClose={() => setSelectedFlyer(null)}
+        onBookNow={() => scrollToSection("#register")}
+      />
     </section>
   );
 }

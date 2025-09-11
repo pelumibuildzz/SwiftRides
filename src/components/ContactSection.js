@@ -3,14 +3,14 @@ import Link from "next/link";
 import scrollToSection from "@/utils";
 import {
   Phone,
-  Mail,
   Clock,
   Shield,
   RefreshCw,
-  MessageCircle,
   HeadphonesIcon,
   Send,
+  Instagram,
 } from "lucide-react";
+import Image from "next/image";
 
 export default function ContactSection() {
   const contactMethods = [
@@ -18,37 +18,39 @@ export default function ContactSection() {
       icon: <Phone className="h-6 w-6" />,
       title: "Call Us",
       description: "Speak directly with our support team",
-      contact: "+234 (0) 123 456 7890",
-      action: "tel:+2341234567890",
+      contact: "+234 (0) 905 632 6737",
+      action: "tel:+2349056326737",
       color: "from-primary to-primary/80",
       available: "24/7 Available",
     },
     {
-      icon: <Mail className="h-6 w-6" />,
-      title: "Email Support",
-      description: "Send us your questions and concerns",
-      contact: "support@swiftrides.ng",
-      action: "mailto:support@swiftrides.ng",
+      icon: (
+        <Image src={"/Instagram.svg"} height={24} width={24} alt="Instagram" />
+      ),
+      title: "Instagram",
+      description: "DM us on Instagram for any inquiries",
+      contact: "@swiftrides_",
+      action: "https://instagram.com/swiftrides_",
       color: "from-accent to-accent/80",
-      available: "Response within 2 hours",
+      available: "Response to all your queries",
     },
     {
-      icon: <MessageCircle className="h-6 w-6" />,
-      title: "WhatsApp",
-      description: "Quick chat for instant support",
-      contact: "+234 (0) 123 456 7890",
-      action: "https://wa.me/2341234567890",
+      icon: <Image src={"/X.svg"} height={24} width={24} alt="X" />,
+      title: "X",
+      description: "Check us on X for updates and support",
+      contact: "@swiftrides1",
+      action: "https://X.com/SWIFTRIDE1",
       color: "from-success to-success/80",
-      available: "Mon-Fri, 9AM-6PM",
+      available: "For Updates and Info",
     },
     {
       icon: <Send className="h-6 w-6" />,
       title: "Telegram",
       description: "Quick chat for instant support",
-      contact: "+234 (0) 123 456 7890",
-      action: "https://t.me/swiftridesupport",
+      contact: "+234 (0) 905 632 6737",
+      action: "https://t.me/+2349056326737",
       color: "from-primary/60 to-accent/60",
-      available: "Mon-Fri, 9AM-6PM",
+      available: "All week, 9AM-6PM",
     },
   ];
 
@@ -231,10 +233,10 @@ export default function ContactSection() {
             <Phone className="h-5 w-5" />
             <span className="font-semibold">Emergency? Call us directly:</span>
             <Link
-              href="tel:+2341234567890"
+              href="tel:+2349056326737"
               className="font-bold underline hover:no-underline"
             >
-              +234 (0) 123 456 7890
+              +234 (0) 905 632 6737
             </Link>
           </div>
         </div>

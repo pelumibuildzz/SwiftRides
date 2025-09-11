@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
@@ -52,16 +52,13 @@ export default function Navbar() {
             }}
             className="flex items-center space-x-2"
           >
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-white font-bold text-lg lg:h-10 lg:w-10">
-              S
-            </div>
-            <span
-              className={`text-xl font-bold transition-colors ${
-                isScrolled ? "text-gray-900" : "text-gray-900"
-              } lg:text-2xl`}
-            >
-              Swift Rides
-            </span>
+            <Image
+              src={"/swiftlogo.png"}
+              className="mix-blend-multiply "
+              width={135}
+              height={80}
+              alt="Swift Rides Logo"
+            />
           </Link>
 
           {/* Desktop Navigation */}

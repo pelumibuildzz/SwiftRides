@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import WhyChooseUsSection from "@/components/WhyChooseUsSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import ContactSection from "@/components/ContactSection";
 import RegisterSection from "@/components/RegisterSection";
@@ -20,6 +21,9 @@ export default function Home() {
       <div className="min-h-screen bg-background">
         <Navbar />
         <HeroSection />
+
+        {/* Why Choose Us Section */}
+        <WhyChooseUsSection />
 
         {/* Placeholder sections for other parts of your one-page website */}
 
