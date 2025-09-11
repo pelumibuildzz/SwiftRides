@@ -11,17 +11,11 @@ export const metadata = {
   title: "Swift Rides - Airport to Covenant University Shuttle Service",
   description:
     "Your reliable shuttle service for a smooth ride to Covenant University.",
+  google-site-verification: "_ziANvXR0i7HJkWUfVLgyILoNdIPoJhpjNfa-GCbRXA",
 };
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-        <meta
-          name="google-site-verification"
-          content="_ziANvXR0i7HJkWUfVLgyILoNdIPoJhpjNfa-GCbRXA"
-        />
-      </head>
       <body className={`${sora.variable} antialiased`}>{children}</body>
     </html>
   );
