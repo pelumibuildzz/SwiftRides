@@ -11,7 +11,9 @@ export const metadata = {
   title: "Swift Rides - Airport to Covenant University Shuttle Service",
   description:
     "Your reliable shuttle service for a smooth ride to Covenant University.",
-  google-site-verification: "_ziANvXR0i7HJkWUfVLgyILoNdIPoJhpjNfa-GCbRXA",
+  verification: {
+    google: "_ziANvXR0i7HJkWUfVLgyILoNdIPoJhpjNfa-GCbRXA",
+  },
 };
 export default function RootLayout({ children }) {
   return (
