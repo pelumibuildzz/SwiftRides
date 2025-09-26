@@ -255,7 +255,7 @@ export default function VehicleAnimation() {
               <div className="bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2 shadow-lg border border-gray-200">
                 <p className="text-sm lg:text-base font-medium text-gray-800 text-center whitespace-nowrap">
                   {currentVehicle === "plane"
-                    ? "Landed? We&apos;re ready for you! ✈️"
+                    ? "Landed? We're ready for you! ✈️"
                     : "Swift rides, safe arrival 🚗"}
                 </p>
               </div>
